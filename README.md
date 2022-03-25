@@ -19,15 +19,15 @@ All infomation can be find at: https://docs.docker.com/
 
 2. Install Docker Compose
 - Download the current stable release of Docker Compose:
-`sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+   `sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
 - Apply executable permissions to the binary:
-`sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose`
+  `sudo chmod +x /usr/local/bin/docker-compose
+   sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose`
 - Test the installation: 
-`docker-compose --version`
+  `docker-compose --version`
  
 3. Install Other package: jq, yq" 
-` yum install epel-release
+`yum install epel-release
  yum install jq
  yum install yq`
  
@@ -52,11 +52,9 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose`
  PEER_ID=$(cat $HOME/aptos/identity/id.json | jq -r '.Result | keys[]')
  PRIVATE_KEY=$(cat $HOME/aptos/identity/private-key.tx`
 
---Add identity (peer_id and private_key) and seed to public_full_node.yaml file config: 
-
-`/usr/local/bin/yq e -i '.full_node_networks[] +=  { "identity": {"type": "from_config", "key": "'$PRIVATE_KEY'", "peer_id": "'$PEER_ID'"} }' $HOME/aptos/public_full_node.yaml
-
-/usr/local/bin/yq ea -i 'select(fileIndex==0).full_node_networks[0].seeds = select(fileIndex==1).seeds | select(fileIndex==0)' $HOME/aptos/public_full_node.yaml $HOME/aptos/seeds.yaml`
+-- Add identity (peer_id and private_key) and seed to public_full_node.yaml file config: 
+`/usr/local/bin/yq e -i '.full_node_networks[] +=  { "identity": {"type": "from_config", "key": "'$PRIVATE_KEY'", "peer_id": "'$PEER_ID'"} }' $HOME/aptos/public_full_node.yaml`
+`/usr/local/bin/yq ea -i 'select(fileIndex==0).full_node_networks[0].seeds = select(fileIndex==1).seeds | select(fileIndex==0)' $HOME/aptos/public_full_node.yaml $HOME/aptos/seeds.yaml`
 
 5. Run docker-compose: 
 `docker compose up -d`

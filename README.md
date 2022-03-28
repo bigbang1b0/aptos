@@ -3,18 +3,14 @@ Aptos network
 
 Run Fullnode Aptos in CENTOS OS
 
-
 ## 1. Install Docker Engine: 
 All infomation can be find at: https://docs.docker.com/
 Set up the repository:
 ```sudo yum install -y yum-utils```
-` sudo yum-config-manager \
-  --add-repo \
-  https://download.docker.com/linux/centos/docker-ce.repo`
-    
-- Install the latest version of Docker Engine and containerd:
+```sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo```
+Install the latest version of Docker Engine and containerd:
   ```sudo yum install docker-ce docker-ce-cli containerd.io```
-- Start docker:
+Start docker:
 ```sudo systemctl start docker```
 
 2. Install Docker Compose

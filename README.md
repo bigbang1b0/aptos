@@ -8,9 +8,9 @@ Run Fullnode Aptos in CENTOS OS
 All infomation can be find at: https://docs.docker.com/
 - Set up the repository:
  ```sudo yum install -y yum-utils```
- ```sudo yum-config-manager \
+ ` sudo yum-config-manager \
   --add-repo \
-  https://download.docker.com/linux/centos/docker-ce.repo```
+  https://download.docker.com/linux/centos/docker-ce.repo`
     
 - Install the latest version of Docker Engine and containerd:
   ```sudo yum install docker-ce docker-ce-cli containerd.io```

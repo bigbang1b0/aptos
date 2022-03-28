@@ -7,29 +7,29 @@ Run Fullnode Aptos in CENTOS OS
 1. Install Docker Engine: 
 All infomation can be find at: https://docs.docker.com/
 - Set up the repository:
- `sudo yum install -y yum-utils`
- `sudo yum-config-manager \
+ ```sudo yum install -y yum-utils```
+ ```sudo yum-config-manager \
   --add-repo \
-  https://download.docker.com/linux/centos/docker-ce.repo`
+  https://download.docker.com/linux/centos/docker-ce.repo```
     
 - Install the latest version of Docker Engine and containerd:
-  `sudo yum install docker-ce docker-ce-cli containerd.io`
+  ```sudo yum install docker-ce docker-ce-cli containerd.io```
 - Start docker:
-  `sudo systemctl start docker`
+  ```sudo systemctl start docker```
 
 2. Install Docker Compose
 - Download the current stable release of Docker Compose:
-   `sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+   ```sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
 - Apply executable permissions to the binary:
-  `sudo chmod +x /usr/local/bin/docker-compose`
-  `sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose`
+  ```sudo chmod +x /usr/local/bin/docker-compose```
+  ```sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose```
 - Test the installation: 
-  `docker-compose --version`
+  ```docker-compose --version```
  
 3. Install Other package: jq, yq" 
-`yum install epel-release`
-`yum install jq`
-`yum install yq`
+```yum install epel-release```
+```yum install jq```
+```yum install yq```
  
 4. Install Aptos
 - Make aptos folder and goto:

@@ -11,9 +11,8 @@ All infomation can be find at: https://docs.docker.com/
 
 ```sh
 sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
-
-```sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo```
 
 - Install the latest version of Docker Engine and containerd:
 

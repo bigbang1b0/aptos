@@ -115,5 +115,7 @@ mkdir /var/lib/docker/volumes/aptos_db/_data
 wget https://devnet.aptoslabs.com/genesis.blob
 wget https://devnet.aptoslabs.com/waypoint.txt
 
+docker-compose pull
+
 docker-compose up -d  && curl 127.0.0.1:9101/metrics 2> /dev/null | grep aptos_state_sync_version | grep type
 ```

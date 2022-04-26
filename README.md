@@ -105,6 +105,7 @@ docker logs -f aptos_fullnode_1 --tail 50
 ```
 
 7. Update Aptos
+```sh
 cd ~/aptos
 docker-compose down
 rm genesis.blob
@@ -112,6 +113,7 @@ rm waypoint.txt
 rm -rf /var/lib/docker/volumes/aptos_db/_data
 mkdir /var/lib/docker/volumes/aptos_db/_data
 wget https://devnet.aptoslabs.com/genesis.blob
-wget https://devnet.aptoslabs.com/waypoint.txt
+wget https://devnet.aptoslabs.com/waypoint.txt```
 
-docker-compose up -d  && curl 127.0.0.1:9101/metrics 2> /dev/null | grep aptos_state_sync_version | grep type
+```sh
+docker-compose up -d  && curl 127.0.0.1:9101/metrics 2> /dev/null | grep aptos_state_sync_version | grep type```

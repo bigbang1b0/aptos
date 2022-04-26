@@ -113,7 +113,7 @@ rm waypoint.txt
 rm -rf /var/lib/docker/volumes/aptos_db/_data
 mkdir /var/lib/docker/volumes/aptos_db/_data
 wget https://devnet.aptoslabs.com/genesis.blob
-wget https://devnet.aptoslabs.com/waypoint.txt```
+wget https://devnet.aptoslabs.com/waypoint.txt
 
-```sh
-docker-compose up -d  && curl 127.0.0.1:9101/metrics 2> /dev/null | grep aptos_state_sync_version | grep type```
+docker-compose up -d  && curl 127.0.0.1:9101/metrics 2> /dev/null | grep aptos_state_sync_version | grep type
+```
